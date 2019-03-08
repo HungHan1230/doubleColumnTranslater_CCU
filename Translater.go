@@ -23,7 +23,7 @@ func main() {
 	// 離開時自動執行關檔
 	defer inputFile.Close()
 	// 宣告行計數器
-	// cnt := 1
+	cnt := 1
 	//
 	inputReader := bufio.NewReader(inputFile)
 	//^^^^^^^^^^^         ^^^^^^^   ^^^^^^^
@@ -41,7 +41,9 @@ func main() {
 			return
 		}
 
-		replaceStr := strings.Replace(inputString, "\n", " ", -1)
+		//fmt.Println(inputString)
+
+		replaceStr := strings.Replace(inputString, "\n", " ", 0)
 
 		t := gtra.NewTranslater()
 		Error, gtraStr := t.Translate(replaceStr)
@@ -54,6 +56,6 @@ func main() {
 		//fmt.Printf("第%2d行:%s\n", cnt, inputString)
 		fmt.Println(replaceStr)
 		fmt.Println(gtraStr + "\n")
-		// cnt++
+		cnt++
 	}
 }
