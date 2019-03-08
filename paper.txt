@@ -1,0 +1,11 @@
+An Ethereum smart contract stores and allows dynamic modification of the access
+control list. The modified IPFS software, hereinafter named
+acl-IPFS, whose design and implementation is discussed in
+the following, can then connect to the smart contract and
+enforce the permissions given by the access control list. AclIPFS allows users to register new files, and grant and revoke
+permissions by forming and sending transactions to the smart
+contract. With every request for a file, acl-IPFS nodes provide
+the public key and sign the message using a linked Ethereum
+account. This creates a relation between the nodes and the
+account, thus allowing the nodes to rely on the smart contract
+to request permissions and enforce them.
